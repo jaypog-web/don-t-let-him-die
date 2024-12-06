@@ -1,6 +1,7 @@
 :root {
     --Turquoise: #5adbbb;
     --DarkTurq: #348c76;
+    --PaleTurq: #c5ede4;
 }
 
 
@@ -16,6 +17,10 @@ img {
     max-width: 100%;
 }
 
+.resizeImg {
+    max-width: 30%;
+}
+
 body.fullPage {
     display: flex;
     flex-direction: column;
@@ -29,20 +34,36 @@ header {
     padding: 20px;
 }
 
-/* Header rules */
 .headerGrid {
     display: grid;
     grid-template-columns: 4.5fr 3.5fr;
 }
 
-.headerIconsGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+.headerIconsRow {
+    display: flex;
+    justify-content: right;
+}
+
+.headerIcon {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#temp {
+    background-image: url(/*...*/);
 }
 
 footer {
     background-color: var(--Turquoise);
     padding: 20px;
+}
+
+.footerButtons {
+    display: flex;
+}
+
+#footerGrid {
+    grid-template-columns: 1fr 2fr;
 }
 
 main {
@@ -79,13 +100,34 @@ main {
 }
 
 .viewButton {
+    display: flex;
+    align-items: center;
     text-align: center;
+    justify-content: center;
+    margin: 0;
+    padding-bottom: 5px;
+
+    color: white;
 }
 
-/* Just for now lol */
 .viewButton:hover {
     cursor: pointer;
-    color: pink;
+    color: var(--Turquoise);
+}
+
+.viewButtonClicked {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    padding-bottom: 5px;
+
+    color: var(--Turquoise);
+}
+
+#himClicked {
+    
 }
 
 .cloneChamber {

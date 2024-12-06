@@ -11,12 +11,11 @@
     <header>
         <div class="headerGrid">
             <div>DON'T LET HIM DIE!</div>
-            <div class="headerIconsGrid">
-                <div>Temp</div>
-                <div>Energy</div>
-                <div>Levels</div>
-                <div>Cloning</div>
-                <div>Manual</div>
+            <div class="headerIconsRow">
+                <div class="headerIcon" id="temp">Temp</div>
+                <div class="headerIcon" id="energy">Energy</div>
+                <div class="headerIcon" id="levels">Levels</div>
+                <div class="headerIcon" id="cloning">Cloning</div>
             </div>
         </div>
     </header>
@@ -27,8 +26,14 @@
                 <div class="displayView himView"></div>
                 <div class="displayView apparatusView"></div>
                 <div class="twoSecGrid">
-                    <div class="viewButton" id="him">Him view</div>
-                    <div class="viewButton" id="apparatus">Apparatus view</div>
+                    <div class="viewButton" id="him">
+                        <h3>VIEW <br> HIM</h3>
+                        <img src="images/him-icon.png" class="resizeImg">
+                    </div>
+                    <div class="viewButton" id="apparatus">
+                        <h3>VIEW <br> APPARATUS</h3>
+                        <img src="images/apparatus-icon.png" class="resizeImg">
+                    </div>
                 </div>
             </div>
             <div>Right hand menu
@@ -52,8 +57,11 @@
     </main>
 
     <footer>
-        <div>
-            <div>Left side buttons</div>
+        <div class="twoSecGrid" id="footerGrid">
+            <div class="footerButtons">
+                <div>RESET</div>
+                <div>Manual</div>
+            </div>
             <div>...FOR THE APPARATUS DEPENDS ON HIM!</div>
         </div>
     </footer>

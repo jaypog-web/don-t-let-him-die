@@ -1,6 +1,6 @@
 console.log('testing alchemy lab JS');
 
-// Start with apparatus view hidden
+// Start with apparatus view hidden and Him view unbound
 $('.apparatusView').hide();
 
 //Function to switch between views
@@ -15,9 +15,51 @@ function changeView(viewArea, currentDisp) {
 $('.viewButton').on('click', function () {
     var findName = this.getAttribute('id');
     var currentDisplay = '.' + findName + "View";
-    console.log(currentDisplay);
 
     changeView(this, currentDisplay);
+
+
+});
+
+//Change states of the selection items for Him view. These items will be "reverted" upon clicking the apparatus view, and vice versa
+/*$('#him').on('click', function () {
+    //For HIM
+    $(this).html('<h3>VIEW <br> HIM</h3><img src="images/him-icon-clicked.png" class="resizeImg">');
+
+    $(this).css('color', 'var(--Turquoise)');
+    $(this).css('cursor', 'default');
+
+    $(this).unbind('click');
+
+    //For APPARATUS
+    $('#apparatus').css('color', '#ffffff');
+    $('#apparatus').css('cursor', 'pointer');
+    $('#apparatus').bind('click');
+    $('#apparatus').html('<h3>VIEW <br> APPARATUS</h3><img src="images/apparatus-icon.png" class="resizeImg">');
+});
+
+$('#apparatus').on('click', function () {
+    //For APPARATUS
+    $(this).html('<h3>VIEW <br> APPARATUS</h3><img src="images/apparatus-icon-clicked.png" class="resizeImg">');
+
+    $(this).css('color', 'var(--Turquoise)');
+    $(this).css('cursor', 'default');
+
+    $(this).unbind('click');
+
+    //For HIM
+    $('#him').css('color', '#ffffff');
+    $('#him').css('cursor', 'pointer');
+    $('#him').bind('click');
+    $('#him').html('<h3>VIEW <br> HIM</h3><img src="images/him-icon.png" class="resizeImg">');
+});
+*/
+
+$('#him').on('click', function () {
+    $(this).removeClass('.viewButton');
+    $(this).removeClass('.hover');
+
+    $(this).addClass('.viewButtonClicked');
 });
 
 //This function is used to switch the character and the apparatus to their risky/warning states when an element is low
