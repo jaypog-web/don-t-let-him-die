@@ -1,0 +1,99 @@
+/* Normalizing rules here!!! */
+body,
+html {
+    min-height: 100vh;
+    height: 100%;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+body.fullPage {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Containers */
+header {
+    background-color: aquamarine;
+    padding: 20px;
+}
+
+/* Header rules */
+.headerGrid {
+    display: grid;
+    grid-template-columns: 4.5fr 3.5fr;
+}
+
+.headerIconsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+footer {
+    background-color: plum;
+    padding: 20px;
+}
+
+main {
+    flex-grow: 1;
+    background-color: black;
+    color: white;
+}
+
+.twoSecGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.rightLargerGrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.displayView {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 70vh;
+}
+
+.himView {
+    background-image: url("../images/vatview_good.gif");
+}
+
+.apparatusView {
+    background-image: url("../images/apparatusView_good.gif");
+}
+
+.viewButton {
+    text-align: center;
+}
+
+/* Just for now lol */
+.viewButton:hover {
+    cursor: pointer;
+    color: pink;
+}
+
+.cloneChamber {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 40vh;
+
+    background-image: url('../images/emptyChamber.png');
+}
+
+/* Remove these things remember! */
+div {
+    border-style: solid;
+    border-width: 1px;
+}
+
+
+/* Text styles */
