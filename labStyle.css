@@ -113,9 +113,11 @@ main {
 
 .showBorder {
     border-style: solid;
-    padding: 10px;
+    padding: 5px;
     align-items: center;
     text-align: center;
+    align-content: center;
+    line-height: 0.6;
 }
 
 .rightLargerGrid {
@@ -190,7 +192,7 @@ main {
 
     background-color: var(--Turquoise);
     color: black;
-    padding: 20px;
+    padding: 0px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -227,6 +229,19 @@ main {
     margin: 10px;
 }
 
+.energyBar {
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    max-width: 40%;
+    margin-top: -20px;
+    position: relative;
+
+    cursor: pointer;
+}
+
 /* Remove these things remember! */
 div {
     border-style: none;
@@ -249,4 +264,10 @@ h3 {
     font-family: Oxanium;
     font-weight: 200;
     font-size: 26px;
+}
+
+h4 {
+    font-family: Oxanium;
+    font-weight: 200;
+    font-size: 20px;
 }

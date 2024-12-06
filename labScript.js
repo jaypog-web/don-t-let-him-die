@@ -66,6 +66,7 @@ function tempGood() {
 
 function energyGood() {
     $('#energy').css('background-image', 'url("../images/energy-icon.png")');
+    $('.energyBar').html('<img src="images/energyFull.png">');
 }
 
 function levelsGood() {
@@ -75,6 +76,21 @@ function levelsGood() {
 function cloneGood() {
     $('#cloning').css('background-image', 'url("../images/clone-icon.png")');
 }
+
+//Each setting has a 0/1 setting to help determine if the guy is ok or not
+var energyTally = 0;
+
+$('.energyBar').on('click', function () {
+    energyGood();
+
+    energyTally = 1;
+    console.log(energyTally);
+
+    //Eventually: if energy + temp + levels = 3, then goodstate
+    /*if (tallyTrack > 4) {
+        goodState();
+    }*/
+});
 
 
 //This function is used to switch the character and the apparatus to their risky/warning states when an element is low
@@ -89,7 +105,10 @@ function tempAlert() {
 }
 
 function energyAlert() {
+    energyTally = 0;
+
     $('#energy').css('background-image', 'url("../images/energy-icon-alert.png")');
+    $('.energyBar').html('<img src="images/energyHalf.png">');
 }
 
 function levelsAlert() {
