@@ -1,3 +1,9 @@
+:root {
+    --Turquoise: #5adbbb;
+    --DarkTurq: #348c76;
+}
+
+
 /* Normalizing rules here!!! */
 body,
 html {
@@ -19,7 +25,7 @@ body.fullPage {
 
 /* Containers */
 header {
-    background-color: aquamarine;
+    background-color: var(--Turquoise);
     padding: 20px;
 }
 
@@ -31,11 +37,11 @@ header {
 
 .headerIconsGrid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 footer {
-    background-color: plum;
+    background-color: var(--Turquoise);
     padding: 20px;
 }
 
@@ -56,6 +62,8 @@ main {
 }
 
 .displayView {
+    margin-top: 10px;
+    margin-bottom: 10px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -87,6 +95,44 @@ main {
     height: 40vh;
 
     background-image: url('../images/emptyChamber.png');
+}
+
+.cloneButton {
+    display: flex;
+
+    background-color: var(--Turquoise);
+    color: black;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    height: 10vh;
+}
+
+.cloneButton:hover {
+    background-color: var(--DarkTurq);
+    color: white;
+    cursor: pointer;
+}
+
+.cloneButtonPressed {
+    display: flex;
+
+    background-color: var(--DarkTurq);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    height: 10vh;
+}
+
+.cloneUpdate {
+    margin-top: 10%;
+    vertical-align: middle;
+    text-align: center;
 }
 
 /* Remove these things remember! */
