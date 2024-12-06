@@ -69,6 +69,28 @@ function energyGood() {
     $('.energyBar').html('<img src="images/energyFull.png">');
 }
 
+var levelAtrue;
+var levelBtrue;
+var levelsTally;
+
+if (levelAtrue == levelBtrue) {
+    levelsTally = 1;
+}
+else {
+    levelsTally = 0;
+}
+
+function levelAGood() {
+    $('#levelA').html('<img src="images/purpleFull.png"></img>');
+
+    levelsGood();
+}
+
+function levelBGood() {
+    $('#levelB').html('<img src="images/orangeFull.png"></img>');
+    levelsGood();
+}
+
 function levelsGood() {
     $('#levels').css('background-image', 'url("../images/levels-icon.png")');
 }
@@ -77,19 +99,22 @@ function cloneGood() {
     $('#cloning').css('background-image', 'url("../images/clone-icon.png")');
 }
 
-//Each setting has a 0/1 setting to help determine if the guy is ok or not
-var energyTally = 0;
-
 $('.energyBar').on('click', function () {
     energyGood();
 
-    energyTally = 1;
-    console.log(energyTally);
+    goodState();
+});
 
-    //Eventually: if energy + temp + levels = 3, then goodstate
-    /*if (tallyTrack > 4) {
-        goodState();
-    }*/
+$('#levelA').on('click', function () {
+    levelAGood();
+
+    goodState();
+});
+
+$('#levelB').on('click', function () {
+    levelBGood();
+
+    goodState();
 });
 
 
@@ -105,19 +130,45 @@ function tempAlert() {
 }
 
 function energyAlert() {
-    energyTally = 0;
 
     $('#energy').css('background-image', 'url("../images/energy-icon-alert.png")');
     $('.energyBar').html('<img src="images/energyHalf.png">');
 }
 
-function levelsAlert() {
+function levelsAlertA() {
     $('#levels').css('background-image', 'url("../images/levels-icon-alert.png")');
+    $('#levelA').html('<img src="images/purpleLow.png">');
+}
+
+function levelsAlertB() {
+    $('#levels').css('background-image', 'url("../images/levels-icon-alert.png")');
+    $('#levelB').html('<img src="images/orangeLow.png">');
 }
 
 function cloneAlert() {
     $('#cloning').css('background-image', 'url("../images/clone-icon-alert.png")');
 }
+
+//Time set interval where the levels continually drain.
+function dropLevels() {
+    var randomDrop = Math.random();
+
+    if (randomDrop < 0.3) {
+        levelsAlertA();
+    }
+    if (randomDrop >= 0.3 && randomDrop < 0.6) {
+        levelsAlertB();
+    }
+    if (randomDrop >= 0.6 && randomDrop <= 1) {
+        levelsAlertA();
+        levelsAlertB();
+    }
+
+    console.log('drop levels off');
+    riskyState();
+}
+var dropTimer;
+dropTimer = setInterval(dropLevels, 9500);
 
 //Clone random function uses a random value to decide if the cloning process succeeds or fails. Higher chance of failing than succeeding (7/10 vs 3/10).
 //If the cloning fails, the user can try again. If the cloning succeeds or is still in process, the user cannot attempt another cloning.
@@ -128,6 +179,7 @@ function cloneSuccess() {
     if (flipRandom < 0.7) {
         $('.cloneChamber').css('background-image', 'url("../images/clone-dissolve.gif")');
         $('.cloneUpdate').html('<h2>CLONE STATUS:</h2> <h3>FAILED</h3>');
+        cloneAlert();
 
         $('.cloneButton').toggle('.cloneButton');
     }
@@ -143,6 +195,7 @@ function cloneSuccess() {
 $('.cloneButton').on('click', function () {
     $('.cloneChamber').css('background-image', 'url("../images/clone-develop.gif")');
     $('.cloneUpdate').html('<h2>CLONE STATUS:</h2> <h3>DEVELOPING...</h3>');
+    cloneGood();
 
     $('.cloneButton').toggle('.cloneButton');
 

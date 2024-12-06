@@ -242,6 +242,15 @@ main {
     cursor: pointer;
 }
 
+.levelsFlex {
+    display: flex;
+}
+
+.levels {
+    margin-top: -20px;
+    cursor: pointer;
+}
+
 /* Remove these things remember! */
 div {
     border-style: none;
