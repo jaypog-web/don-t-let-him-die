@@ -2,6 +2,8 @@
     --Turquoise: #5adbbb;
     --DarkTurq: #348c76;
     --PaleTurq: #c5ede4;
+    --SoftRed: #f05264;
+    --DarkerRed: #bf3949;
 }
 
 
@@ -104,6 +106,40 @@ main {
     flex-grow: 1;
     background-color: black;
     color: white;
+}
+
+.manual {
+    height: 100vh;
+    background-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--Turquoise);
+    margin: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.manualButton {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--DarkTurq);
+}
+
+#okayButton {
+    margin-top: 30px;
+    height: 80px;
+    width: 120px;
+    color: var(--PaleTurq);
+    text-align: center;
+}
+
+#okayButton:hover {
+    background-color: var(--PaleTurq);
+    color: var(--DarkTurq);
+    cursor: pointer;
 }
 
 .twoSecGrid {
@@ -251,10 +287,37 @@ main {
     cursor: pointer;
 }
 
-/* Remove these things remember! */
-div {
-    border-style: none;
-    border-width: 1px;
+.resetButton {
+    display: flex;
+    background-color: var(--SoftRed);
+    width: 25%;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding-top: 3%;
+    border-radius: 10px;
+    height: 14vh;
+}
+
+.resetButton:hover {
+    background-color: var(--DarkerRed);
+    cursor: pointer;
+}
+
+#footerManual {
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 25%;
+    height: 12.5vh;
+    text-align: center;
+    background-color: var(--DarkTurq);
+    border-radius: 10px;
+}
+
+#footerManual:hover {
+    background-color: black;
+    cursor: pointer;
 }
 
 

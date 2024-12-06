@@ -99,6 +99,11 @@ function cloneGood() {
     $('#cloning').css('background-image', 'url("../images/clone-icon.png")');
 }
 
+function cloneReset() {
+    $('#cloning').css('background-image', 'url("../images/clone-icon.png")');
+    $('.cloneChamber').css('background-image', 'url("../images/emptyChamber.png")');
+}
+
 var energyLow = 0;
 var levelALow = 0;
 var levelBLow = 0;
@@ -283,3 +288,21 @@ function dissolve() {
         $('.cloneButton').removeClass('cloneButton');
     }
 }
+
+
+//Reset button, to return to first state
+$('.resetButton').on('click', function () {
+    goodState();
+    energyGood();
+    levelAGood();
+    levelBGood();
+    cloneReset();
+
+    deadMarker = 0;
+});
+
+$('.manual').hide();
+
+$('.manualButton').on('click', function () {
+    $('.manual').toggle();
+});
