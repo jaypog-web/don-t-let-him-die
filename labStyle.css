@@ -111,9 +111,19 @@ main {
     grid-template-columns: 1fr 1fr;
 }
 
+.showBorder {
+    border-style: solid;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+}
+
 .rightLargerGrid {
     display: grid;
     grid-template-columns: 1fr 2fr;
+
+    border-style: solid;
+    padding: 10px;
 }
 
 .displayView {

@@ -53,6 +53,30 @@ $('#him').on('click', function () {
     $(this).addClass('.viewButtonClicked');
 });
 
+// Please code reset states!!!!!!!!!!!
+// Reset states, to return each altered item to its "good" state
+function goodState() {
+    $('.himView').css('background-image', 'url("../images/vatview_good.gif")');
+    $('.apparatusView').css('background-image', 'url("../images/apparatusView_good.gif")');
+}
+
+function tempGood() {
+    $('#temp').css('background-image', 'url("../images/temp-icon.png")');
+}
+
+function energyGood() {
+    $('#energy').css('background-image', 'url("../images/energy-icon.png")');
+}
+
+function levelsGood() {
+    $('#levels').css('background-image', 'url("../images/levels-icon.png")');
+}
+
+function cloneGood() {
+    $('#cloning').css('background-image', 'url("../images/clone-icon.png")');
+}
+
+
 //This function is used to switch the character and the apparatus to their risky/warning states when an element is low
 function riskyState() {
     $('.himView').css('background-image', 'url("../images/vatview_risk.gif")');
@@ -76,15 +100,38 @@ function cloneAlert() {
     $('#cloning').css('background-image', 'url("../images/clone-icon-alert.png")');
 }
 
+//Clone random function uses a random value to decide if the cloning process succeeds or fails. Higher chance of failing than succeeding (7/10 vs 3/10).
+//If the cloning fails, the user can try again. If the cloning succeeds or is still in process, the user cannot attempt another cloning.
+function cloneSuccess() {
+    var flipRandom = Math.random();
+    console.log(flipRandom);
+
+    if (flipRandom < 0.7) {
+        $('.cloneChamber').css('background-image', 'url("../images/clone-dissolve.gif")');
+        $('.cloneUpdate').html('<h2>CLONE STATUS:</h2> <h3>FAILED</h3>');
+
+        $('.cloneButton').toggle('.cloneButton');
+    }
+    else if (flipRandom >= 0.7) {
+        $('.cloneChamber').css('background-image', 'url("../images/clone-success.gif")');
+        $('.cloneUpdate').html('<h2>CLONE STATUS:</h2> <h3>SUCCESS</h3>');
+
+        $('.cloneButton').remove('.cloneButton');
+    }
+}
+
 //Change clone chamber upon clicking clone button. Also remove the option/suggestion to clone again, and call the riskyState function
 $('.cloneButton').on('click', function () {
     $('.cloneChamber').css('background-image', 'url("../images/clone-develop.gif")');
     $('.cloneUpdate').html('<h2>CLONE STATUS:</h2> <h3>DEVELOPING...</h3>');
-    $('.cloneButton').addClass('cloneButtonPressed');
-    $('.cloneButton').removeClass('cloneButton');
+
+    $('.cloneButton').toggle('.cloneButton');
 
     riskyState();
     energyAlert();
 
-    $(this).unbind('click');
+    //The clone's success is set to a timer: it develops for 5 seconds before either failing or succeeding.
+    setTimeout(cloneSuccess, 5000);
+    //To test
+    console.log('delayed after clicking');
 });
