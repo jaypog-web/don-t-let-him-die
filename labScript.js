@@ -99,21 +99,25 @@ function cloneGood() {
     $('#cloning').css('background-image', 'url("../images/clone-icon.png")');
 }
 
+var energyLow = 0;
+var levelALow = 0;
+var levelBLow = 0;
+
 $('.energyBar').on('click', function () {
     energyGood();
-
+    energyLow = 0;
     goodState();
 });
 
 $('#levelA').on('click', function () {
     levelAGood();
-
+    levelALow = 0;
     goodState();
 });
 
 $('#levelB').on('click', function () {
     levelBGood();
-
+    levelBLow = 0;
     goodState();
 });
 
@@ -130,19 +134,38 @@ function tempAlert() {
 }
 
 function energyAlert() {
-
     $('#energy').css('background-image', 'url("../images/energy-icon-alert.png")');
     $('.energyBar').html('<img src="images/energyHalf.png">');
+
+    energyLow = 1;
+
+    //This call will make the energy totally die within a given time frame -- 15 seconds
+    setTimeout(energyDead, 15000);
+    console.log('energy dead!');
+
+    dissolve();
 }
 
 function levelsAlertA() {
     $('#levels').css('background-image', 'url("../images/levels-icon-alert.png")');
     $('#levelA').html('<img src="images/purpleLow.png">');
+    levelALow = 1;
+
+    setTimeout(levelADead, 15000);
+    console.log('level A dead!');
+
+    dissolve();
 }
 
 function levelsAlertB() {
     $('#levels').css('background-image', 'url("../images/levels-icon-alert.png")');
     $('#levelB').html('<img src="images/orangeLow.png">');
+    levelBLow = 1;
+
+    setTimeout(levelBDead, 15000);
+    console.log('level B dead!');
+
+    dissolve();
 }
 
 function cloneAlert() {
@@ -207,3 +230,56 @@ $('.cloneButton').on('click', function () {
     //To test
     console.log('delayed after clicking');
 });
+
+
+//Totally dead
+function deadState() {
+    $('.himView').css('background-image', 'url("../images/vatview_failure.gif")');
+    $('.apparatusView').css('background-image', 'url("../images/apparatusView_failure.png")');
+}
+
+
+//function which kills the energy completely
+function energyDead() {
+    if (energyLow = 1) {
+        $('.energyBar').html('<img src="images/energyEmpty.png">');
+        $('.energyBar').unbind('click');
+    }
+    $('.energyBar').css('cursor', 'default');
+
+    energyLow = 2;
+}
+
+function levelADead() {
+    if (levelALow = 1) {
+        $('#levelA').html('<img src="images/purpleEmpty.png">');
+        $('#levelA').unbind('click');
+    }
+    $('#levelA').css('cursor', 'default');
+
+    clearInterval(dropTimer);
+    levelALow = 2;
+}
+
+function levelBDead() {
+    if (levelBLow = 1) {
+        $('#levelB').html('<img src="images/purpleEmpty.png">');
+        $('#levelB').unbind('click');
+    }
+    $('#levelB').css('cursor', 'default');
+
+    clearInterval(dropTimer);
+    levelBLow = 2;
+}
+
+var deadMarker;
+
+function dissolve() {
+    deadMarker = energyLow + levelALow + levelBLow;
+    console.log('deadMarker:', deadMarker);
+
+    if (deadMarker > 3) {
+        deadState();
+        $('.cloneButton').removeClass('cloneButton');
+    }
+}
