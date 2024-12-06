@@ -5,8 +5,6 @@ $('.apparatusView').hide();
 
 //Function to switch between views
 function changeView(viewArea, currentDisp) {
-    console.log('testing changeView();');
-
     $('.displayView').hide();
     $(currentDisp).fadeIn(1500);
 }
@@ -17,24 +15,20 @@ $('.viewButton').on('click', function () {
     var currentDisplay = '.' + findName + "View";
 
     changeView(this, currentDisplay);
-
-
 });
 
-//Change states of the selection items for Him view. These items will be "reverted" upon clicking the apparatus view, and vice versa
-/*$('#him').on('click', function () {
+//Change states of the selection items for Him view. These items will be "reverted" upon clicking the apparatus view, and vice versa.
+//For the future -- figure out how to actually unbind click function/remove class from #him and #apparatus, currently just basically painting over a dead fly
+$('#him').on('click', function () {
     //For HIM
     $(this).html('<h3>VIEW <br> HIM</h3><img src="images/him-icon-clicked.png" class="resizeImg">');
 
     $(this).css('color', 'var(--Turquoise)');
     $(this).css('cursor', 'default');
 
-    $(this).unbind('click');
-
     //For APPARATUS
     $('#apparatus').css('color', '#ffffff');
     $('#apparatus').css('cursor', 'pointer');
-    $('#apparatus').bind('click');
     $('#apparatus').html('<h3>VIEW <br> APPARATUS</h3><img src="images/apparatus-icon.png" class="resizeImg">');
 });
 
@@ -45,15 +39,12 @@ $('#apparatus').on('click', function () {
     $(this).css('color', 'var(--Turquoise)');
     $(this).css('cursor', 'default');
 
-    $(this).unbind('click');
-
     //For HIM
     $('#him').css('color', '#ffffff');
     $('#him').css('cursor', 'pointer');
     $('#him').bind('click');
     $('#him').html('<h3>VIEW <br> HIM</h3><img src="images/him-icon.png" class="resizeImg">');
 });
-*/
 
 $('#him').on('click', function () {
     $(this).removeClass('.viewButton');
@@ -68,6 +59,23 @@ function riskyState() {
     $('.apparatusView').css('background-image', 'url("../images/apparatusView_risk.gif")');
 }
 
+//These functions switch to the header icons' alert states
+function tempAlert() {
+    $('#temp').css('background-image', 'url("../images/temp-icon-alert.png")');
+}
+
+function energyAlert() {
+    $('#energy').css('background-image', 'url("../images/energy-icon-alert.png")');
+}
+
+function levelsAlert() {
+    $('#levels').css('background-image', 'url("../images/levels-icon-alert.png")');
+}
+
+function cloneAlert() {
+    $('#cloning').css('background-image', 'url("../images/clone-icon-alert.png")');
+}
+
 //Change clone chamber upon clicking clone button. Also remove the option/suggestion to clone again, and call the riskyState function
 $('.cloneButton').on('click', function () {
     $('.cloneChamber').css('background-image', 'url("../images/clone-develop.gif")');
@@ -76,6 +84,7 @@ $('.cloneButton').on('click', function () {
     $('.cloneButton').removeClass('cloneButton');
 
     riskyState();
+    energyAlert();
 
     $(this).unbind('click');
 });

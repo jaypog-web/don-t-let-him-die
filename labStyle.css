@@ -31,26 +31,56 @@ body.fullPage {
 /* Containers */
 header {
     background-color: var(--Turquoise);
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-style: none;
 }
 
 .headerGrid {
     display: grid;
-    grid-template-columns: 4.5fr 3.5fr;
+    grid-template-columns: 5fr 3fr;
+
+    border-style: none;
 }
 
-.headerIconsRow {
-    display: flex;
+.headerIconsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: right;
+    padding-top: 20px;
+
+    border-style: none;
 }
 
 .headerIcon {
+    height: 10vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-size: 70%;
+
+    padding: 0;
     margin-right: 10px;
     margin-left: 10px;
+
+    border-style: none;
 }
 
 #temp {
-    background-image: url(/*...*/);
+    background-image: url("../images/temp-icon.png");
+}
+
+#energy {
+
+    background-image: url("../images/energy-icon.png");
+}
+
+#levels {
+    background-image: url("../images/levels-icon.png");
+}
+
+#cloning {
+    background-image: url("../images/clone-icon.png");
 }
 
 footer {
@@ -64,6 +94,10 @@ footer {
 
 #footerGrid {
     grid-template-columns: 1fr 2fr;
+}
+
+.footerAlignRight {
+    text-align: right;
 }
 
 main {
@@ -83,12 +117,14 @@ main {
 }
 
 .displayView {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     height: 70vh;
+
+    border-style: solid;
+    border-width: 1px;
 }
 
 .himView {
@@ -104,10 +140,14 @@ main {
     align-items: center;
     text-align: center;
     justify-content: center;
-    margin: 0;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding-bottom: 5px;
 
     color: white;
+
+    border-style: solid;
 }
 
 .viewButton:hover {
@@ -124,10 +164,6 @@ main {
     padding-bottom: 5px;
 
     color: var(--Turquoise);
-}
-
-#himClicked {
-    
 }
 
 .cloneChamber {
@@ -177,11 +213,30 @@ main {
     text-align: center;
 }
 
+.rightMenu {
+    margin: 10px;
+}
+
 /* Remove these things remember! */
 div {
-    border-style: solid;
+    border-style: none;
     border-width: 1px;
 }
 
 
 /* Text styles */
+h1 {
+    font-family: Krona One;
+    font-size: 48px;
+}
+
+h2 {
+    font-family: Krona One;
+    font-size: 28px;
+}
+
+h3 {
+    font-family: Oxanium;
+    font-weight: 200;
+    font-size: 26px;
+}
