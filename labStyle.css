@@ -69,20 +69,20 @@ header {
 }
 
 #temp {
-    background-image: url("../images/temp-icon.png");
+    background-image: url("images/temp-icon.png");
 }
 
 #energy {
 
-    background-image: url("../images/energy-icon.png");
+    background-image: url("images/energy-icon.png");
 }
 
 #levels {
-    background-image: url("../images/levels-icon.png");
+    background-image: url("images/levels-icon.png");
 }
 
 #cloning {
-    background-image: url("../images/clone-icon.png");
+    background-image: url("images/clone-icon.png");
 }
 
 footer {
@@ -176,11 +176,11 @@ main {
 }
 
 .himView {
-    background-image: url("../images/vatview_good.gif");
+    background-image: url("images/vatview_good.gif");
 }
 
 .apparatusView {
-    background-image: url("../images/apparatusView_good.gif");
+    background-image: url("images/apparatusView_good.gif");
 }
 
 .viewButton {
@@ -220,7 +220,7 @@ main {
     background-position: center;
     height: 40vh;
 
-    background-image: url('../images/emptyChamber.png');
+    background-image: url('images/emptyChamber.png');
 }
 
 .cloneButton {

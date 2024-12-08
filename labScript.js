@@ -56,16 +56,16 @@ $('#him').on('click', function () {
 // Please code reset states!!!!!!!!!!!
 // Reset states, to return each altered item to its "good" state
 function goodState() {
-    $('.himView').css('background-image', 'url("../images/vatview_good.gif")');
-    $('.apparatusView').css('background-image', 'url("../images/apparatusView_good.gif")');
+    $('.himView').css('background-image', 'url("images/vatview_good.gif")');
+    $('.apparatusView').css('background-image', 'url("images/apparatusView_good.gif")');
 }
 
 function tempGood() {
-    $('#temp').css('background-image', 'url("../images/temp-icon.png")');
+    $('#temp').css('background-image', 'url("images/temp-icon.png")');
 }
 
 function energyGood() {
-    $('#energy').css('background-image', 'url("../images/energy-icon.png")');
+    $('#energy').css('background-image', 'url("images/energy-icon.png")');
     $('.energyBar').html('<img src="images/energyFull.png">');
 }
 
@@ -92,16 +92,16 @@ function levelBGood() {
 }
 
 function levelsGood() {
-    $('#levels').css('background-image', 'url("../images/levels-icon.png")');
+    $('#levels').css('background-image', 'url("images/levels-icon.png")');
 }
 
 function cloneGood() {
-    $('#cloning').css('background-image', 'url("../images/clone-icon.png")');
+    $('#cloning').css('background-image', 'url("images/clone-icon.png")');
 }
 
 function cloneReset() {
-    $('#cloning').css('background-image', 'url("../images/clone-icon.png")');
-    $('.cloneChamber').css('background-image', 'url("../images/emptyChamber.png")');
+    $('#cloning').css('background-image', 'url("images/clone-icon.png")');
+    $('.cloneChamber').css('background-image', 'url("images/emptyChamber.png")');
 }
 
 var energyLow = 0;
@@ -129,17 +129,17 @@ $('#levelB').on('click', function () {
 
 //This function is used to switch the character and the apparatus to their risky/warning states when an element is low
 function riskyState() {
-    $('.himView').css('background-image', 'url("../images/vatview_risk.gif")');
-    $('.apparatusView').css('background-image', 'url("../images/apparatusView_risk.gif")');
+    $('.himView').css('background-image', 'url("images/vatview_risk.gif")');
+    $('.apparatusView').css('background-image', 'url("images/apparatusView_risk.gif")');
 }
 
 //These functions switch to the header icons' alert states
 function tempAlert() {
-    $('#temp').css('background-image', 'url("../images/temp-icon-alert.png")');
+    $('#temp').css('background-image', 'url("images/temp-icon-alert.png")');
 }
 
 function energyAlert() {
-    $('#energy').css('background-image', 'url("../images/energy-icon-alert.png")');
+    $('#energy').css('background-image', 'url("images/energy-icon-alert.png")');
     $('.energyBar').html('<img src="images/energyHalf.png">');
 
     energyLow = 1;
@@ -152,7 +152,7 @@ function energyAlert() {
 }
 
 function levelsAlertA() {
-    $('#levels').css('background-image', 'url("../images/levels-icon-alert.png")');
+    $('#levels').css('background-image', 'url("images/levels-icon-alert.png")');
     $('#levelA').html('<img src="images/purpleLow.png">');
     levelALow = 1;
 
@@ -163,7 +163,7 @@ function levelsAlertA() {
 }
 
 function levelsAlertB() {
-    $('#levels').css('background-image', 'url("../images/levels-icon-alert.png")');
+    $('#levels').css('background-image', 'url("images/levels-icon-alert.png")');
     $('#levelB').html('<img src="images/orangeLow.png">');
     levelBLow = 1;
 
@@ -174,7 +174,7 @@ function levelsAlertB() {
 }
 
 function cloneAlert() {
-    $('#cloning').css('background-image', 'url("../images/clone-icon-alert.png")');
+    $('#cloning').css('background-image', 'url("images/clone-icon-alert.png")');
 }
 
 //Time set interval where the levels continually drain.
@@ -205,14 +205,14 @@ function cloneSuccess() {
     console.log(flipRandom);
 
     if (flipRandom < 0.7) {
-        $('.cloneChamber').css('background-image', 'url("../images/clone-dissolve.gif")');
+        $('.cloneChamber').css('background-image', 'url("images/clone-dissolve.gif")');
         $('.cloneUpdate').html('<h2>CLONE STATUS:</h2> <h3>FAILED</h3>');
         cloneAlert();
 
         $('.cloneButton').toggle('.cloneButton');
     }
     else if (flipRandom >= 0.7) {
-        $('.cloneChamber').css('background-image', 'url("../images/clone-success.gif")');
+        $('.cloneChamber').css('background-image', 'url("images/clone-success.gif")');
         $('.cloneUpdate').html('<h2>CLONE STATUS:</h2> <h3>SUCCESS</h3>');
 
         $('.cloneButton').remove('.cloneButton');
@@ -221,7 +221,7 @@ function cloneSuccess() {
 
 //Change clone chamber upon clicking clone button. Also remove the option/suggestion to clone again, and call the riskyState function
 $('.cloneButton').on('click', function () {
-    $('.cloneChamber').css('background-image', 'url("../images/clone-develop.gif")');
+    $('.cloneChamber').css('background-image', 'url("images/clone-develop.gif")');
     $('.cloneUpdate').html('<h2>CLONE STATUS:</h2> <h3>DEVELOPING...</h3>');
     cloneGood();
 
@@ -239,8 +239,8 @@ $('.cloneButton').on('click', function () {
 
 //Totally dead
 function deadState() {
-    $('.himView').css('background-image', 'url("../images/vatview_failure.gif")');
-    $('.apparatusView').css('background-image', 'url("../images/apparatusView_failure.png")');
+    $('.himView').css('background-image', 'url("images/vatview_failure.gif")');
+    $('.apparatusView').css('background-image', 'url("images/apparatusView_failure.png")');
 }
 
 
