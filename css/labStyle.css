@@ -1,0 +1,345 @@
+:root {
+    --Turquoise: #5adbbb;
+    --DarkTurq: #348c76;
+    --PaleTurq: #c5ede4;
+    --SoftRed: #f05264;
+    --DarkerRed: #bf3949;
+}
+
+
+/* Normalizing rules here!!! */
+body,
+html {
+    min-height: 100vh;
+    height: 100%;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.resizeImg {
+    max-width: 30%;
+}
+
+body.fullPage {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Containers */
+header {
+    background-color: var(--Turquoise);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-style: none;
+}
+
+.headerGrid {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+
+    border-style: none;
+}
+
+.headerIconsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: right;
+    padding-top: 20px;
+
+    border-style: none;
+}
+
+.headerIcon {
+    height: 10vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-size: 70%;
+
+    padding: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+
+    border-style: none;
+}
+
+#temp {
+    background-image: url("../images/temp-icon.png");
+}
+
+#energy {
+
+    background-image: url("../images/energy-icon.png");
+}
+
+#levels {
+    background-image: url("../images/levels-icon.png");
+}
+
+#cloning {
+    background-image: url("../images/clone-icon.png");
+}
+
+footer {
+    background-color: var(--Turquoise);
+    padding: 20px;
+}
+
+.footerButtons {
+    display: flex;
+}
+
+#footerGrid {
+    grid-template-columns: 1fr 2fr;
+}
+
+.footerAlignRight {
+    text-align: right;
+}
+
+main {
+    flex-grow: 1;
+    background-color: black;
+    color: white;
+}
+
+.manual {
+    height: 100vh;
+    background-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--Turquoise);
+    margin: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.manualButton {
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--DarkTurq);
+}
+
+#okayButton {
+    margin-top: 30px;
+    height: 80px;
+    width: 120px;
+    color: var(--PaleTurq);
+    text-align: center;
+}
+
+#okayButton:hover {
+    background-color: var(--PaleTurq);
+    color: var(--DarkTurq);
+    cursor: pointer;
+}
+
+.twoSecGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.showBorder {
+    border-style: solid;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    line-height: 0.6;
+}
+
+.rightLargerGrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    border-style: solid;
+    padding: 10px;
+}
+
+.displayView {
+    margin: 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 70vh;
+
+    border-style: solid;
+    border-width: 1px;
+}
+
+.himView {
+    background-image: url("../images/vatview_good.gif");
+}
+
+.apparatusView {
+    background-image: url("../images/apparatusView_good.gif");
+}
+
+.viewButton {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+
+    color: white;
+
+    border-style: solid;
+}
+
+.viewButton:hover {
+    cursor: pointer;
+    color: var(--Turquoise);
+}
+
+.viewButtonClicked {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    padding-bottom: 5px;
+
+    color: var(--Turquoise);
+}
+
+.cloneChamber {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 40vh;
+
+    background-image: url('../images/emptyChamber.png');
+}
+
+.cloneButton {
+    display: flex;
+
+    background-color: var(--Turquoise);
+    color: black;
+    padding: 0px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    height: 10vh;
+}
+
+.cloneButton:hover {
+    background-color: var(--DarkTurq);
+    color: white;
+    cursor: pointer;
+}
+
+.cloneButtonPressed {
+    display: flex;
+
+    background-color: var(--DarkTurq);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    height: 10vh;
+}
+
+.cloneUpdate {
+    margin-top: 10%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.rightMenu {
+    margin: 10px;
+}
+
+.energyBar {
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    max-width: 40%;
+    margin-top: -20px;
+    position: relative;
+
+    cursor: pointer;
+}
+
+.levelsFlex {
+    display: flex;
+}
+
+.levels {
+    margin-top: -20px;
+    cursor: pointer;
+}
+
+.resetButton {
+    display: flex;
+    background-color: var(--SoftRed);
+    width: 25%;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding-top: 3%;
+    border-radius: 10px;
+    height: 14vh;
+}
+
+.resetButton:hover {
+    background-color: var(--DarkerRed);
+    cursor: pointer;
+}
+
+#footerManual {
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 25%;
+    height: 12.5vh;
+    text-align: center;
+    background-color: var(--DarkTurq);
+    border-radius: 10px;
+}
+
+#footerManual:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+
+/* Text styles */
+h1 {
+    font-family: Krona One;
+    font-size: 48px;
+}
+
+h2 {
+    font-family: Krona One;
+    font-size: 28px;
+}
+
+h3 {
+    font-family: Oxanium;
+    font-weight: 200;
+    font-size: 26px;
+}
+
+h4 {
+    font-family: Oxanium;
+    font-weight: 200;
+    font-size: 20px;
+}
